@@ -42,6 +42,9 @@
       margin: 0;
       justify-content: space-between;
     }
+    .company-name p{
+      display: flex;
+    }
     .company-name h1{
       color: #1f1d1c;
       text-decoration: underline;
@@ -51,10 +54,19 @@
       font-family: 'Finger Paint', cursive;
       font-size: 38px;
     }
-    #donate-top{
+    .donate-top{
       border-radius: 3px;
       border: 2px solid #6d366f;
       background-color: #ef0bce;
+      font-weight: 700;
+      color: #fff;
+      font-size: 20px;
+      padding: 6px 42px;
+      font-family: 'Roboto', sans-serif;
+      display: block;
+      align-self: center;
+    }
+    #sign-up{
       font-weight: 700;
       color: #fff;
       font-size: 20px;
@@ -97,7 +109,8 @@
 
     <div class="company-name">
      <a href="/"><h1>THE Tringua</h1></a>
-     <a href="/login" id="donate-top">DONATE</a>
+     <p><a href="/login" class="donate-top">DONATE</a>
+     <a href="/sign_up" id="sign-up">Sign Up</a></p>
     </div>
     
     <main>

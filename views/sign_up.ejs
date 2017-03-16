@@ -3,34 +3,165 @@
 <html>
 <head>
 	<title>Page Title</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
 	<!-- <stripe library > -->
+	<link href="https://fonts.googleapis.com/css?family=Finger+Paint|Roboto" rel="stylesheet">
 	<script type="text/javascript" src="https://js.stripe.com/v1/"></script>
+	<style>
+		body{
+			display: flex;
+			flex-direction:column;
+			justify-content: center;
+			font-family: 'Roboto', sans-serif;
+			background: url('/images/bg-sign-up.jpg') no-repeat center center fixed;
+			background-size: cover;
+		}
+		a{
+			text-decoration: none;
+		}
+
+		.company-name{
+			width: 80%;
+			align-self: center;
+      display: flex;
+      padding: 5px;
+      margin: 0;
+      justify-content: space-between;
+    }
+    .company-name h1{
+      color: #fff;
+      text-decoration: underline;
+      text-shadow: 0px 0px 1px #e5eaf1;
+    }
+    .company-name h1{
+      font-family: 'Finger Paint', cursive;
+      font-size: 38px;
+    }
+    #donate-top{
+      border-radius: 3px;
+      border: 2px solid #6d366f;
+      background-color: #ef0bce;
+      font-weight: 700;
+      color: #fff;
+      font-size: 20px;
+      padding: 6px 42px;
+      font-family: 'Roboto', sans-serif;
+      display: block;
+      align-self: center;
+    }
+  
+		.horizontal-line{
+			width: 5px;
+			height: 100%;
+			background-color: #C4CCD7;
+			margin: 0 15px;
+		}
+		.container{
+			margin-top: 8%;
+			display: flex;
+			justify-content: center;
+		}
+		form#sign-up-form{
+			border: 1px solid #ccc;
+    	padding: 10px 40px;
+    	border-radius: 3px;
+    	background-color: #fff;
+		}
+		.sign_up{
+			display: flex;
+			border:0;
+		}
+		input.sign-up-form-input{
+			width: 100%;
+	    height: 40px;
+	    font-size: 18px;
+	    border:1px solid grey;
+	    padding: 2px 0 2px 8px;
+	    border-radius: 4px;
+		}
+		.sign-up-div-button{
+			display: flex;
+			flex-direction: column;
+			width: 100%;
+		}
+		.sign-up-div-button button{
+			height: 42px;
+			background-color: #00bcd4;
+			border:1px solid #00bcd4;
+			font-size: 18px;
+			border-radius: 3px;
+
+		}
+		.sign-up-div-button p{
+			text-align: center;
+    	margin: 3px 0;
+
+		}
+		.sign-up-div-button a{font-size: 12px; color:#337CFF;}
+
+		/*=========== Stripe login ============*/
+		.stripe_login{
+			display: flex;
+	    flex-direction: column;
+	    border: 1px solid #ccc;
+	    border-radius: 5px;
+	    background-color: #fff;
+		}
+		form#stripe_login{
+			padding: 10px 35px;
+		}
+		.stripe_login form{
+			display: flex;
+	    flex-direction: column;
+	    width: 497px;
+	    align-items: center;
+	    flex-grow: 1;
+	    box-sizing: border-box;
+		}
+		.sign-up-div{
+			width: 100%;
+		}
+		h3{
+			text-align: center;
+		}
+	
+	</style>
 
 </head>
 <body>
-	<h2>Signup Form</h2>
+	<div class="company-name">
+     <a href="/"><h1>THE Tringua</h1></a>
+     <a href="/login" id="donate-top">DONATE</a>
+    </div>
+	<div class="container">
 	<div class="sign_up">	
-		<form action="/sign_up"  method="post" id="sign-up-form" style="border:1px solid #ccc">
-			
-			    <label><b>Email</b></label>
-			    <input type="text" placeholder="Enter Email" name="email" required>
-
-			    <label><b>Password</b></label>
-			    <input type="password" placeholder="Enter Password" name="psw" required>
-
-			    <label><b>Repeat Password</b></label>
-			    <input type="password" placeholder="Repeat Password" name="psw_repeat" required>
-			    <input type="checkbox" checked="checked"> Remember me
-			    <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
-
-			    <div >
-			      <button type="button" >Cancel</button>
-			      <button type="submit">Sign Up</button>
+		<form action="/sign_up"  class="sig-up-form" method="post" id="sign-up-form" style="border:1px solid #ccc">
+			<h3>Sign Up</h3>
+					<div class="sign-up-div">
+							<label><b>Email</b></label>
+							<p><input type="text" class="sign-up-form-input" placeholder="Enter Email" name="email" required></p>
+					</div>
+			    <div class="sign-up-div">
+			    	<label><b>Password</b></label>
+			    	<p><input type="password"  class="sign-up-form-input"  placeholder="Enter Password" name="psw" required></p>
 			    </div>
-			
+			    <div class="sign-up-div">
+			    	<label><b>Repeat Password</b></label>
+			    	<p><input type="password"  class="sign-up-form-input" placeholder="Repeat Password" name="psw_repeat" required></p>
+			    </div>
+			    <div class="sign-up-div">
+			    	<input type="checkbox" checked="checked"> Remember me
+			    </div>
+			    <div>
+			    	<p class="sign-up-div">By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+			    </div>
+			  	<div class="sign-up-div-button">
+			      <button type="submit">Sign Up</button>
+			      <p><a href="/">Cancel</a></p>
+			    </div>
 		</form>
 	</div>
+	<div class="horizontal-line"></div>
 	<!-- Stripe credit card payment mode -->
 
 <!-- 	<div id="stripe-form">
@@ -56,27 +187,30 @@
 	<div id="error" class="hidden"></div>
 	<div id="success" class="hidden">Thanks for signing up at Browserling!</div> -->
 	<div class="stripe_login">
-		<form action="/stripe_login"  method="post" id="stripe_login" style="border:1px solid #ccc">
+		<form action="/stripe_login"  method="post" id="stripe_login">
 			
-				<div>Create a new plan</div>
-			    ID:
-			    <input type="text" placeholder="Enter Email" name="ID" required>
-
-			    name:
-			    <input type="text" placeholder="name" name="name" required>
-
-			    Amonut:
-			    <input type="password" placeholder="$10" name="amount" required>
-			    <input type="checkbox" checked="checked"> Remember me
-			    <p>Setting up a new strip plan</p>
-
-			    <div align="center">
-
-			      <span><button type="button" >Cancel</button></span>
-			      <span><button type="submit" >Create plan</button></span>
+				<h3>Create a New Plan</h3>
+			    <div class="sign-up-div">
+			    	<label for="">Id</label>
+			    	<p><input type="text" placeholder="Enter Email" name="ID" class="sign-up-form-input" required></p>
+			    </div>
+			    <div class="sign-up-div">
+			    	<label for="">Name</label>
+			    	<p><input type="text" placeholder="name" name="name" class="sign-up-form-input" required></p>
+			    </div>
+			    <div class="sign-up-div">
+			    	<label for="">Amount</label>
+			    	<p><input type="password" placeholder="$10" class="sign-up-form-input" name="amount" required></p>
+			    	<p><input type="checkbox" checked="checked"> Remember me</p>
+			    	<p>Setting up a new strip plan</p>
+			    </div>
+			    <div align="center" class="sign-up-div-button">
+			      <button type="button" >Create plan</button>
+			      <p ><a href="/">Cancel</a></p>
 			    </div>
 			
 		</form>
+	</div>
 	</div>
 </body>
 </html>
