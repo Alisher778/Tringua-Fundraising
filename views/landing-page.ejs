@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link href="https://fonts.googleapis.com/css?family=Finger+Paint|Roboto" rel="stylesheet">
+  <title>Donate</title>
+  <link rel="stylesheet" href="">
+  <style>
+    body{
+      background: url('/images/bg.jpg')no-repeat center center fixed;
+      background-size: cover;
+      width: 100vw;
+      height: 100vh;
+      max-width: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    a{
+      text-decoration: none;
+    }
+    body:before {
+      content: '';
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      /*background: radial-gradient(rgba(249, 250, 250, 0.24), rgba(3, 3, 3, 0.35));*/
+      opacity: .6;
+      z-index: -4;
+    }
+    .container{
+      display: flex;
+      flex-direction: column;
+      width: 80%;
+      align-self: center;
+    }
+    .company-name{
+      display: flex;
+      padding: 5px;
+      margin: 0;
+      justify-content: space-between;
+    }
+    .company-name h1{
+      color: #1f1d1c;
+      text-decoration: underline;
+      text-shadow: 0px 0px 1px #e5eaf1;
+    }
+    .company-name h1{
+      font-family: 'Finger Paint', cursive;
+      font-size: 38px;
+    }
+    #donate-top{
+      border-radius: 3px;
+      border: 2px solid #6d366f;
+      background-color: #ef0bce;
+      font-weight: 700;
+      color: #fff;
+      font-size: 20px;
+      padding: 6px 42px;
+      font-family: 'Roboto', sans-serif;
+      display: block;
+      align-self: center;
+    }
+    .company-name button{
+      color: #e3e9ec;
+      font-weight: 900;
+      font-size: 17px;
+    }
+    main{
+      background-color: rgb(223, 242, 245);
+      margin-top: 20%;
+      align-self: center;
+      width: 80%;
+      text-align: center;
+      color: #130f0f;
+      border-radius: 8px;
+      text-shadow: 0px 0px 1px #afa5a5;
+      padding: 36px;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    main a{
+      border-radius: 3px;
+      border: 2px solid #2f86de;
+      background-color: #1e84de;
+      font-weight: 700;
+      color: #fff;
+      font-size: 20px;
+      padding: 6px 42px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <div class="company-name">
+     <a href="/"><h1>THE Tringua</h1></a>
+     <a href="/login" id="donate-top">DONATE</a>
+    </div>
+    
+    <main>
+      <h1>You think a penny can not help anyone</h1>
+      <h1>But it means a lot to someone who need it</h1>
+      <a href="/login">DONATE</a>
+    </main>
+  </div>
+</body>
+</html>

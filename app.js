@@ -33,7 +33,7 @@ app.set('view engine', 'ejs')
 // set the route from login page to  the home page
 app.get('/', function(req, res){
 	console.log("hi this list rendering ");	
-	 res.render('login', {listMessages: listSms});
+	 res.render('landing-page');
 	//redirect("/");
 });
 app.get('/login', function(req, res){  
